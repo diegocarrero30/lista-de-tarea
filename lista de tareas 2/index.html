@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de FontAwesome para las acciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+
+    <!-- Barra de Navegación Principal -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-list-check"></i>
+            <span>TaskFlow</span>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="btn-icon" title="Cambiar Modo">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <main class="container">
+        
+        <!-- Formulario para agregar tareas -->
+        <section class="task-form-section">
+            <form id="task-form">
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="¿Qué necesitas hacer hoy?" autocomplete="off" required>
+                    <button type="submit" id="add-btn" class="btn-primary">
+                        <i class="fa-solid fa-plus"></i> Agregar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Navegación secundaria / Contadores y Filtros -->
+        <nav class="task-nav">
+            <div class="counters">
+                <span class="badge">Total: <strong id="total-count">0</strong></span>
+                <span class="badge">Completadas: <strong id="completed-count">0</strong></span>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pending">Pendientes</button>
+                <button class="filter-btn" data-filter="completed">Completadas</button>
+            </div>
+        </nav>
+
+        <!-- Lista de Tareas -->
+        <section class="task-list-section">
+            <ul id="task-list" class="task-list">
+                <!-- Las tareas se inyectarán dinámicamente con JavaScript -->
+            </ul>
+            <div id="empty-state" class="empty-state hidden">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <p>No hay tareas pendientes. ¡Buen trabajo!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
